@@ -2,8 +2,13 @@ package tp1.ejercicio2;
 
 import java.util.Scanner;
 
+/*
+ * Realizá un programa que permita ingresar 3 notas pertenecientes a tres trimestres distintos
+ * para cierto alumno de nivel secundario. Debe calcularse y mostrarse la nota promedio.
+ */
 public class Example2 {
     private static final Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
         int score;
         int acc = 0;

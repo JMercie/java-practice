@@ -52,15 +52,16 @@ public class Parcial1 {
             numPaqueteDeseado = Integer.parseInt(input.nextLine());
             if (numPaqueteDeseado == 0) {
                 exit = true;
-            } else if (numPaqueteDeseado < 0 || numPaqueteDeseado > 5) {
-                System.out.printf("Estos son nuestro numeros de paquete validos: %n%s%n%s%n%s%n%s", NRO_BRASIL, NRO_CARIBE, NRO_DISNEY, NRO_EUROPA);
+            }
+            if (numPaqueteDeseado < 0 || numPaqueteDeseado > 5) {
+                System.out.printf("Estos son nuestro numeros de paquete validos: %n%s%n%s%n%s%n%s%n", NRO_BRASIL, NRO_CARIBE, NRO_DISNEY, NRO_EUROPA);
             } else {
                 System.out.println("Ingrese el nombre del Cliente:");
                 cliente = input.nextLine();
                 System.out.println("Ingrese la cantidad de Pasajeros:");
                 numPasajeros = Integer.parseInt(input.nextLine());
-                if (numPasajeros == 0) {
-                    System.out.println("Ingrese una cantidad de pasajeros mayor a 0, por favor.");
+                if (numPasajeros == 0 || cliente.equals("")) {
+                    System.out.println("Ingrese una cantidad de pasajeros mayor a 0 y un nombre de cliente, por favor.");
                 } else {
                     switch (numPaqueteDeseado) {
                         case NRO_BRASIL:
@@ -125,13 +126,12 @@ public class Parcial1 {
                             }
                             break;
                     }
-                    totalPasajeros += numPasajeros;
-                    totalDeVentas += montoDelPaquete;
-                    count++;
                 }
+                totalPasajeros += numPasajeros;
+                totalDeVentas += montoDelPaquete;
+                count++;
             }
         }
-        int promedioPorPasajero;
         if (count == 0) {
             System.out.println("Esperamos saber de usted pronto, Saludos!");
         } else {
